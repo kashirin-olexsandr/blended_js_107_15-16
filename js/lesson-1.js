@@ -56,17 +56,34 @@
 // const max = 50;
 // const min = 23;
 
-
 function logNumbers(min, max) {
   let total = 0;
   for (let i = max; i >= min; i -= 1) {
-    console.log(i)
+    console.log(i);
     if (i % 2 === 0) {
       total += i;
     }
   }
   return total;
 }
-console.log(logNumbers(20, 40));
+// console.log(logNumbers(20, 40));
 
+// Task4
+//Якщо число ділитися на 3 повертати fizz
+//якщо ділитися на 5 повертати buzz
+//Якщо ділитися на 3 і на 5 повернути fizzbuzz
+//fizzBuzz(24);
 
+function fizzBuzz(number) {
+  if (number % 3 === 0 && number % 5 === 0) {
+    return "fizzbuzz";
+  } else if (number % 3 === 0) {
+    return "fizz";
+  } else if (number % 5 === 0) {
+    return "buzz";
+  } else {
+    return number;
+  }
+}
+
+console.log(fizzBuzz(5)); // виведе fizz
