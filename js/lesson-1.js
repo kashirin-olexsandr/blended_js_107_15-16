@@ -105,14 +105,31 @@ function fizzBuzz(number) {
 const userRule = prompt("Введіть логін");
 console.log("userRule: ", userRule);
 
-if (userRule === `Адмін`) {
-  const pasword = prompt("Ведіть пароль");
-  if (pasword === `Я головний`) {
-    console.log(`Добрий день!`);
-  } else {
-    console.log(`Невірний пароль!`);
-  }
-  console.log(pasword);
-} else {
-  console.log(`Я вас не знаю`);
+// if (userRule === `Адмін`) {
+//   const pasword = prompt("Ведіть пароль");
+//   if (pasword === `Я головний`) {
+//     console.log(`Добрий день!`);
+//   } else {
+//     console.log(`Невірний пароль!`);
+//   }
+//   console.log(pasword);
+// } else {
+//   console.log(`Я вас не знаю`);
+// }
+
+// function getOrderQuantity(order) {
+//   if (getOrderQuantity.length>=order) {
+//     console.log order;
+//   } else{ }
+// }
+// const array= [false];
+// const result = array ? "A" : "B";
+// console.log(Boolean(array));
+
+array = ["top", "picks", "for", "you"];
+function getLength(array) {
+  const get = array.join();
+  let Length = array.length;
+  return Length;
 }
+console.log(array);
