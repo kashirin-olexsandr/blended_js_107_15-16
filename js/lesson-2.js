@@ -70,32 +70,47 @@ function getTotalSalaries(object) {
   return sum;
 }
 
-console.log(getTotalSalaries(salaries));
-
+console.log(getTotalSalaries(salaries)); //яка приймає масив об'єктів і //Рядок з назвою каменю. //Функція вважає, що м повертає загальну вартість каменів //з ​​таким ім'ям, ціною та кількістю з об'єкта
 
 // Напишіть ф-цію calcTotalPrice(stones, stonesName),
-  //яка приймає масив об'єктів і
-  //Рядок з назвою каменю.
-  //Функція вважає, що м повертає загальну вартість каменів
-  //з ​​таким ім'ям, ціною та кількістю з об'єкта
 const stones = [
-      { name: "Смарагд", price: 1300, quantity: 4 },
-      { name: "Діамант", price: 2700, quantity: 6 },
-      { name: "Сапфір", price: 400, quantity: 7 },
-      { name: "Щебінь", price: 150, quantity: 100 },
-    ];
+  { name: "Смарагд", price: 1300, quantity: 4 },
+  { name: "Діамант", price: 2700, quantity: 6 },
+  { name: "Сапфір", price: 400, quantity: 7 },
+  { name: "Щебінь", price: 150, quantity: 100 },
+];
 
-  function calcTotalPrice(stones, stonesName) {
-    
-    for (const stone of stones) {
-      if (stone.name === stonesName) {
+function calcTotalPrice(stones, stonesName) {
+  for (const stone of stones) {
+    if (stone.name === stonesName) {
       return stone.price * stone.quantity;
-       
-      }
     }
-    
   }
+}
 console.log(calcTotalPrice(stones, "Діамант"));
 console.log(calcTotalPrice(stones, "Сапфір"));
 console.log(calcTotalPrice(stones, "Смарагд"));
 
+//Напишіть функцію caclculateAverage()
+//яка приймає довільну кількість
+//аргументів і повертає їхнє середнє значення.
+//Додати перевірку, що аргументи це числа.
+
+function caclculateAverage(...args) {
+  let sum = 0;
+  let totalCount = 0;
+  for (const arg of args) {
+    if (typeof arg === "number") {
+      sum += arg;
+      totalCount += 1;
+    }
+  }
+  if (totalCount === 0) {
+    return 0;
+  }
+  return sum / totalCount;
+}
+
+console.log(caclculateAverage(1, 2, 3, 4));
+console.log(caclculateAverage(1, "a", 3, 4));
+console.log(caclculateAverage(20, 30, 10));
