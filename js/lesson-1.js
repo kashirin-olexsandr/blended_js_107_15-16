@@ -133,3 +133,21 @@ function getLength(array) {
   return Length;
 }
 console.log(array);
+
+//Напиши функцію findSmallerNumber(numbers)
+//яка шукає найменше число в масиві.
+//Додай перевірку що функція отримує масив
+// const numbers = [12, 5, 35, 56, 3, 24, 7, 80, 12];
+
+function findSmallerNumber(numbers) {
+  let smallNumbers = numbers[0];
+  for (let i = 0; i < numbers.length; i++) {
+    if (smallNumbers > numbers[i]) {
+      smallNumbers = numbers[i];
+    }
+  }
+  return smallNumbers;
+}
+
+const numbers = [12, 5, 35, 56, 3, 24, 7, 80, 12];
+console.log(findSmallerNumber(numbers));
