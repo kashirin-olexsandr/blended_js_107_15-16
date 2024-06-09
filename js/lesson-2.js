@@ -6,12 +6,12 @@
 
 function logItems(array) {
   for (let i = 0; i < array.length; i += 1) {
-    console.log(`${i + 1} - ${array[i]}`);
+    // console.log(`${i + 1} - ${array[i]}`);
   }
 }
 
 const arr = ["Джаз", "Блюз", "Рок-н-рол"];
-console.log(logItems(arr));
+// console.log(logItems(arr));
 
 //Напиши функцію findSmallerNumber(numbers)
 //яка шукає найменше число в масиві.
@@ -34,7 +34,7 @@ function findSmallerNumber(numbers) {
 }
 
 const numbers = [12, 5, 35, 56, 3, 24, 7, 80, 12];
-console.log(findSmallerNumber(numbers)); // Name: Peter. Surname: Parker. Age: 22. Position: spider-man.
+// console.log(findSmallerNumber(numbers)); // Name: Peter. Surname: Parker. Age: 22. Position: spider-man.
 
 // Додати метод getinfo в об'єкт user, який повертатиме інфу про користувача у форматі
 const user = {
@@ -47,8 +47,27 @@ const user = {
 function getInfo() {
   return `name: ${this.name} surname: ${this.surname} age: ${this.age} position: ${this.position}`;
 }
-user.getInfo = getInfo;
+user.getInfo = getInfo; //нашої команди //Напишіть код для сумування всіх зарплат і //збережіть його результат у змінній sum. //Якщо об'єкт salaries порожній, то результат має бути 0
 
-console.log(user);
-console.log(getInfo());
-console.log(user.getInfo());
+// console.log(user);
+// console.log(getInfo());
+// console.log(user.getInfo());
+//У нас є об'єкт, у якому зберігатимуться зарплати
+const salaries = {
+  Mango: 100,
+  Poly: 160,
+  Ajax: 1470,
+};
+
+function getTotalSalaries(object) {
+  let sum = 0;
+  const arraySalaries = Object.values(object);
+  console.log(arraySalaries);
+
+  for (const salary of arraySalaries) {
+    sum += salary;
+  }
+  return sum;
+}
+
+console.log(getTotalSalaries(salaries));
