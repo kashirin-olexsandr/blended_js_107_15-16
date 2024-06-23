@@ -93,7 +93,7 @@ function getUserNames(usersData) {
   return usersData.map((user) => user.name);
 }
 
-console.log(getUserNames(users));
+// console.log(getUserNames(users));
 
 // / Отримати масив об'єктів користувачів за кольором очей (поле eyeColor).
 // console.log(getUsersWithEyeColor(users, 'blue')); // [об'єкт Moore Hensley, об'єкт Sharlene Bush, об'єкт Carey Barr]
@@ -102,6 +102,33 @@ function getUsersWithEyeColor(users, eyeColor) {
   return users.filter((user) => user.eyeColor === eyeColor);
 }
 
-console.log(getUsersWithEyeColor(users, "blue"));
-console.log(getUsersWithEyeColor(users, "green"));
-console.log(getUsersWithEyeColor(users, "brown"));
+// console.log(getUsersWithEyeColor(users, "blue"));
+// console.log(getUsersWithEyeColor(users, "green"));
+// console.log(getUsersWithEyeColor(users, "brown"));
+
+// Отримати масив всіх умінь всіх користувачів (поле skills), при цьому не повинно бути
+// Уміння, що повторюються, і вони повинні бути відсортовані в алфавітному порядку.
+// console.log(getSortedUniqueSkills(users));
+// ['adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit' , 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam']
+
+function getSortedUniqueSkills(users) {
+  return users
+    .flatMap((user) => user.skills)
+    .filter((skill, index, array) => array.indexOf(skill) === index)
+    .toSorted();
+}
+
+// console.log(getSortedUniqueSkills(users));
+
+// Масив імен всіх користувачів які мають один із зазначеним ім'ям.
+// console.log(getUsersWithFriend(users, 'Briana Decker'))); // [ 'Sharlene Bush', 'Sheree Anthony' ]
+// console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
+
+function getUsersWithFriend(users, name) {
+  return users
+    .filter((user) => user.friends.includes(name))
+    .map((user) => user.name);
+}
+
+console.log(getUsersWithFriend(users, "Briana Decker")); // [ 'Sharlene Bush', 'Sheree Anthony' ]
+console.log(getUsersWithFriend(users, "Goldie Gentry")); // [ 'Elma Head', 'Sheree Anthony' ]
