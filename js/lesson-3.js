@@ -138,27 +138,62 @@ console.log(getUsersWithFriend(users, "Goldie Gentry")); // [ 'Elma Head', 'Sher
 // console.log(getUserWithEmail(users, 'elmahead@omatom.com')); // {об'єкт користувача Elma Head}
 
 function getUserWithEmail(users, email) {
-return users.find((user) => user.email === email)
+  return users.find((user) => user.email === email);
 }
 
-console.log(getUserWithEmail(users, 'shereeanthony@kog.com')); 
- console.log(getUserWithEmail(users, 'elmahead@omatom.com'));
+console.log(getUserWithEmail(users, "shereeanthony@kog.com"));
+console.log(getUserWithEmail(users, "elmahead@omatom.com"));
 
- //Напиши клас User для створення користувача з наступними властивостями: 
- // a. userName - ім'я, рядок // b. age - вік, число // c. numbersOfPost - кількість публікацій, число
-  // d. клас очікує 1 параметр - об'єкт налаштувань з однойменними властивостями 
-  // Додай метод getInfo(), який повертає рядок: // `Користувачу ${} ${} років і у нього ${} публікацій.`
+//Напиши клас User для створення користувача з наступними властивостями:
+// a. userName - ім'я, рядок // b. age - вік, число // c. numbersOfPost - кількість публікацій, число
+// d. клас очікує 1 параметр - об'єкт налаштувань з однойменними властивостями
+// Додай метод getInfo(), який повертає рядок: // `Користувачу ${} ${} років і у нього ${} публікацій.`
 
-  class User {
-    constructor(userName, age, numbersOfPost) {
+class User {
+  constructor(userName, age, numbersOfPost) {
     this.userName = userName;
     this.age = age;
     this.numbersOfPost = numbersOfPost;
   }
   getInfo() {
-    return  `Користувачу ${this.userName} ${this.age} років і у нього ${this.numbersOfPost} публікацій.`
+    return `Користувачу ${this.userName} ${this.age} років і у нього ${this.numbersOfPost} публікацій.`;
+  }
+}
+const user = new User("Василь", 25, 10);
+console.log(user.getInfo());
+
+// Напиши клас Client який створює об'єкт з ​​властивостями login email
+// Оголоси приватні властивості #login #email,
+// доступ до яких зроби через геттер та сеттер login email
+
+class Client {
+  #login;
+  #email;
+
+  constructor(login, email) {
+    this.#login = login;
+    this.#email = email;
   }
 
+  get login() {
+    return this.#login;
+  }
+
+  set login(newLogin) {
+    this.#login = newLogin;
+  }
+
+  get email() {
+    return this.#email;
+  }
+
+  set email(newEmail) {
+    this.#email = newEmail;
+  }
 }
-const user = new User('Василь', 25, 10 );
-console.log(user.getInfo()); 
+
+const vasya = new Client("Vasya", "vasya@gmail.com");
+console.log(vasya.login);
+console.log((vasya.login = "Tamara"));
+console.log(vasya.email);
+console.log((vasya.email = "tamara@gmail.com"));
