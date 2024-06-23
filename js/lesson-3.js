@@ -132,3 +132,33 @@ function getUsersWithFriend(users, name) {
 
 console.log(getUsersWithFriend(users, "Briana Decker")); // [ 'Sharlene Bush', 'Sheree Anthony' ]
 console.log(getUsersWithFriend(users, "Goldie Gentry")); // [ 'Elma Head', 'Sheree Anthony' ]
+
+//Отримати користувача (не масив) по email (поле email, він унікальний).
+// console.log(getUserWithEmail(users, 'shereeanthony@kog.com')); // {об'єкт користувача Sheree Anthony}
+// console.log(getUserWithEmail(users, 'elmahead@omatom.com')); // {об'єкт користувача Elma Head}
+
+function getUserWithEmail(users, email) {
+return users.find((user) => user.email === email)
+}
+
+console.log(getUserWithEmail(users, 'shereeanthony@kog.com')); 
+ console.log(getUserWithEmail(users, 'elmahead@omatom.com'));
+
+ //Напиши клас User для створення користувача з наступними властивостями: 
+ // a. userName - ім'я, рядок // b. age - вік, число // c. numbersOfPost - кількість публікацій, число
+  // d. клас очікує 1 параметр - об'єкт налаштувань з однойменними властивостями 
+  // Додай метод getInfo(), який повертає рядок: // `Користувачу ${} ${} років і у нього ${} публікацій.`
+
+  class User {
+    constructor(userName, age, numbersOfPost) {
+    this.userName = userName;
+    this.age = age;
+    this.numbersOfPost = numbersOfPost;
+  }
+  getInfo() {
+    return  `Користувачу ${this.userName} ${this.age} років і у нього ${this.numbersOfPost} публікацій.`
+  }
+
+}
+const user = new User('Василь', 25, 10 );
+console.log(user.getInfo()); 
