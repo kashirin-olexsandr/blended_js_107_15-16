@@ -32,3 +32,37 @@ passwordButton.addEventListener("click", (event) => {
     passwordButton.textContent = "Приховати";
   }
 });
+
+// Завдання 3
+// Кнопка "Зменшити" робить квадрат менше на 10 пікселів, допопка "Збільшити" - більше на 10 пікселів.
+// */
+
+const box = document.querySelector("#box");
+const decrease = document.querySelector("#decrease");
+const increase = document.querySelector("#increase");
+console.log(getComputedStyle(box).height);
+console.log(getComputedStyle(box).width);
+
+let currentWidth = parseInt(getComputedStyle(box).width);
+let currentHeight = parseInt(getComputedStyle(box).height);
+console.log(currentHeight);
+
+increase.addEventListener("click", () => {
+  if (currentWidth >= 60 || currentHeight >= 60) {
+    alert("Перестань клацати!!!!");
+    return;
+  }
+  currentWidth += 10;
+  currentHeight += 10;
+  box.style.width = currentWidth + "px";
+  box.style.height = currentHeight + "px";
+});
+decrease.addEventListener("click", () => {
+  if (currentWidth <= 0 || currentHeight <= 0) {
+    return;
+  }
+  currentWidth -= 10;
+  currentHeight -= 10;
+  box.style.width = currentWidth + "px";
+  box.style.height = currentHeight + "px";
+});
